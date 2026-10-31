@@ -1,47 +1,95 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex">
-<title>vs Heacham Res · Match Stats</title>
+<meta name="theme-color" content="#111111">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Match Stats">
+<title>HEA v DER · Match Stats</title>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://palladian-levant.github.io/dereham-stats/">
+<meta property="og:title" content="Heacham Res v Dereham Town Dev · Sat 7 Nov">
+<meta property="og:description" content="Dereham Town Dev: win 37% · draw 19% · lose 44%. Key players, form and stats.">
+<meta property="og:image" content="https://palladian-levant.github.io/dereham-stats/preview.png?v=202610312037">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Dereham Town Dev: win 37% · draw 19% · lose 44%. Key players, form and stats.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23111'/%3E%3Cpath d='M50 16 L78 26 L78 50 C78 68 66 80 50 86 C34 80 22 68 22 50 L22 26 Z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f4f4f1;--card:#fff;--ink:#141414;--muted:#6b6b6b;--line:#e2e2dc;--acc:#c8102e;--w:#1f9d55;--d:#9a9a9a;--l:#d64545;--barme:#141414;--barop:#c8102e}
-@media (prefers-color-scheme:dark){:root{--bg:#0f0f10;--card:#19191b;--ink:#f2f2f0;--muted:#9a9a9a;--line:#2a2a2d;--acc:#ff4d61;--barme:#f2f2f0;--barop:#ff4d61}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-.wrap{max-width:760px;margin:0 auto;padding:16px}
-header{padding:8px 0 14px}.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-h1{font-size:26px;line-height:1.15;margin:4px 0 6px;font-weight:800}h1 .vs{color:var(--acc);font-weight:700;padding:0 4px}
-.sub{color:var(--muted);font-size:14px}
+:root{--bg:#f2f2ef;--card:#fff;--ink:#141414;--muted:#6b6b6b;--line:#e3e3dd;--acc:#c8102e;--w:#1f9d55;--d:#9a9a9a;--l:#d64545;
+--barme:#141414;--barop:#c8102e;--hero:#111;--sg:20,20,20;--disp:"Barlow Condensed","Arial Narrow","Roboto Condensed",sans-serif}
+@media (prefers-color-scheme:dark){:root{--bg:#0d0d0e;--card:#19191b;--ink:#f2f2f0;--muted:#9a9a9a;--line:#2a2a2d;--acc:#ff4d61;
+--barme:#f2f2f0;--barop:#ff4d61;--hero:#000;--sg:242,242,240}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:56px}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-variant-numeric:tabular-nums}
+.wrap{max-width:760px;margin:0 auto;padding:0 14px}
+.hero{background:var(--hero);color:#fff;position:relative;overflow:hidden;padding:14px 0 18px}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 34px,transparent 34px 68px)}
+.hero .wrap{position:relative}
+.hero-top{display:flex;justify-content:space-between;gap:10px;white-space:nowrap;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#aaa}
+.teams{display:grid;grid-template-columns:1fr auto 1fr;align-items:start;gap:8px;margin:18px 0 14px}
+.team{text-align:center}.badge{width:58px;height:58px;border-radius:50%;margin:0 auto 8px;display:flex;align-items:center;justify-content:center;
+font-family:var(--disp);font-weight:800;font-size:21px;letter-spacing:.04em}
+.badge.me{background:repeating-linear-gradient(90deg,#fff 0 9px,#111 9px 18px);color:#111;box-shadow:0 0 0 3px #fff}
+.badge.me span{background:#fff;padding:0 4px;border-radius:4px}
+.badge.op{background:#2a2a2d;color:#fff;box-shadow:0 0 0 3px #3a3a3d}
+.tname{font-family:var(--disp);font-weight:700;font-size:20px;line-height:1.05;text-transform:uppercase}
+.tpos{font-size:12px;color:#aaa;margin-top:4px}
+.mid{text-align:center;padding-top:6px;min-width:84px}.vs{font-family:var(--disp);font-weight:800;font-size:26px;color:#ff4d61}
+.ko{font-family:var(--disp);font-weight:700;font-size:22px;line-height:1}.day{font-size:12px;color:#ccc;margin-top:4px}
+.ground{font-size:11px;color:#999;margin-top:4px;line-height:1.25}
+.headline{display:flex;align-items:baseline;gap:10px;justify-content:center;border-top:1px solid rgba(255,255,255,.12);padding-top:12px}
+.headline .big{font-family:var(--disp);font-weight:800;font-size:46px;line-height:1;color:#4ade80}
+.headline .txt{font-size:14px;color:#ddd}.headline .txt b{color:#fff}
+.tabs{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.tabs .wrap{display:flex;gap:4px;padding-top:8px;padding-bottom:8px;overflow-x:auto}
+.tabs a{flex:1;text-align:center;padding:7px 10px;border-radius:20px;font-family:var(--disp);font-weight:700;font-size:16px;letter-spacing:.04em;
+text-transform:uppercase;color:var(--muted);text-decoration:none;white-space:nowrap}
+.tabs a.on{background:var(--ink);color:var(--bg)}
+h2.group{font-family:var(--disp);font-weight:800;font-size:26px;text-transform:uppercase;margin:26px 2px 4px;display:flex;align-items:center;gap:10px}
+h2.group::after{content:"";flex:1;height:2px;background:var(--ink);opacity:.12}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:12px 0}
-.card h3{margin:0 0 12px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
-.wdl{display:flex;height:44px;border-radius:10px;overflow:hidden;font-weight:800}
-.wdl div{display:flex;align-items:center;justify-content:center;color:#fff;min-width:44px;font-size:15px}
+.card h3{margin:0 0 12px;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.wdl{display:flex;height:44px;border-radius:10px;overflow:hidden;font-family:var(--disp);font-weight:800;font-size:20px;gap:2px}
+.wdl div{display:flex;align-items:center;justify-content:center;color:#fff;min-width:46px}
 .wdl .w{background:var(--w)}.wdl .d{background:var(--d)}.wdl .l{background:var(--l)}
 .wdl-lab{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:6px}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}
-.tile{background:var(--bg);border-radius:10px;padding:10px;text-align:center}.tile b{display:block;font-size:20px}.tile span{font-size:11px;color:var(--muted)}
-.scores{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}.score{background:var(--bg);border-radius:8px;padding:5px 9px;font-weight:700}.score i{font-style:normal;color:var(--muted);font-weight:500;font-size:12px}
+.tile{background:var(--bg);border-radius:10px;padding:10px;text-align:center}
+.tile b{display:block;font-family:var(--disp);font-weight:800;font-size:26px;line-height:1.1}.tile span{font-size:11px;color:var(--muted)}
+.sgrid-wrap{margin-top:16px}.sgrid{border-collapse:separate;border-spacing:3px;width:100%;table-layout:fixed}
+.sgrid th{font-size:11px;color:var(--muted);font-weight:600;padding:2px}.sgrid th.corner{width:22px}
+.sg{text-align:center;font-size:12px;font-weight:600;border-radius:6px;padding:9px 0;background:rgba(var(--sg),calc(.04 + var(--t) * .8));color:var(--ink)}
+.sg.dk{color:var(--bg)}.sg.top{outline:2px solid var(--acc);outline-offset:-2px}
+.sg-key{display:flex;justify-content:space-between;gap:8px;font-size:11px;color:var(--muted);margin-top:6px;flex-wrap:wrap}
 .conf{font-size:12px;color:var(--muted);margin-top:12px}.conf b{color:var(--ink)}
-ul.ins{margin:0;padding-left:18px}ul.ins li{margin:6px 0}
-.who{display:flex;justify-content:space-between;font-weight:800;font-size:14px;margin-bottom:6px}.who .o{color:var(--acc)}
-.cmp{display:grid;grid-template-columns:56px 1fr 56px;align-items:center;gap:8px;padding:6px 0;border-top:1px solid var(--line)}
+ul.ins{margin:0;padding-left:18px}ul.ins li{margin:7px 0}
+.who{display:flex;justify-content:space-between;font-family:var(--disp);font-weight:700;font-size:17px;text-transform:uppercase;margin-bottom:6px}.who .o{color:var(--acc)}
+.cmp{display:grid;grid-template-columns:56px 1fr 56px;align-items:center;gap:8px;padding:7px 0;border-top:1px solid var(--line)}
 .cmp-val{text-align:center;font-weight:600;color:var(--muted)}.cmp-val.win{color:var(--ink);font-weight:800}
-.cmp-label{text-align:center;font-size:12px;color:var(--muted)}.bars{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.cmp-label{text-align:center;font-size:12px;color:var(--muted);margin-bottom:3px}.bars{display:grid;grid-template-columns:1fr 1fr;gap:4px}
 .bar{height:6px;background:var(--bg);border-radius:3px;display:flex;overflow:hidden}.bar.l{justify-content:flex-end}
-.bar.l span{background:var(--barme)}.bar.r span{background:var(--barop)}
-.snap{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:12px}.snap .big{font-size:28px;font-weight:800}.snap small{display:block;color:var(--muted);font-size:11px}
+.bar.l span{background:var(--barme);border-radius:3px 0 0 3px}.bar.r span{background:var(--barop);border-radius:0 3px 3px 0}
+.snap{display:flex;gap:18px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.snap .big{font-family:var(--disp);font-size:34px;font-weight:800;line-height:1}.snap small{display:block;color:var(--muted);font-size:11px;margin-top:3px}
 .chip{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:6px;color:#fff;font-weight:800;font-size:12px;margin-right:3px}
 .chip.sm{width:auto;padding:0 6px;height:20px;font-size:11px}.chip.W{background:var(--w)}.chip.D{background:var(--d)}.chip.L{background:var(--l)}
 .splits{display:grid;grid-template-columns:1fr 1fr;gap:10px}.split{background:var(--bg);border-radius:10px;padding:10px 12px;border:2px solid transparent}.split.hl{border-color:var(--acc)}
 .split h4{margin:0 0 6px;font-size:13px}.kv{display:flex;justify-content:space-between;font-size:13px;padding:2px 0}.kv span{color:var(--muted)}
 ul.games{list-style:none;margin:0;padding:0}ul.games li{display:grid;grid-template-columns:30px 76px 1fr auto;align-items:center;gap:6px;padding:6px 0;border-top:1px solid var(--line);font-size:14px}
-.gl-date{color:var(--muted);font-size:12px}.gl-opp i{color:var(--muted);font-style:normal;font-size:12px}
+.gl-date{color:var(--muted);font-size:12px}.gl-opp i{color:var(--muted);font-style:normal;font-size:12px}.gl-score{font-family:var(--disp);font-size:18px}
 .scroll{overflow-x:auto}table.tbl{width:100%;border-collapse:collapse;font-size:13px}
-.tbl th{font-size:11px;color:var(--muted);font-weight:600;text-align:center;padding:6px 4px;border-bottom:1px solid var(--line)}
+.tbl th{font-size:11px;color:var(--muted);font-weight:600;text-align:center;padding:6px 4px;border-bottom:1px solid var(--line);white-space:normal}
 .tbl td{text-align:center;padding:6px 4px;border-bottom:1px solid var(--line);white-space:nowrap}.tbl .l{text-align:left}
-.tbl th{white-space:normal}
 .tbl tr.me td{background:color-mix(in srgb,var(--ink) 9%,transparent);font-weight:700}.tbl tr.opp td{background:color-mix(in srgb,var(--acc) 14%,transparent);font-weight:700}
+.bk{display:inline-block;width:9px;height:12px;border-radius:2px;margin:0 2px 0 4px;vertical-align:-1px}.bk.y{background:#f5c518}.bk.r{background:#d61f2c}
 .muted{color:var(--muted)}ul.plain{margin:0;padding-left:18px}
-footer{color:var(--muted);font-size:12px;padding:12px 0 30px}
-.banner{display:flex;gap:10px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:14px;margin-top:4px}
+footer{color:var(--muted);font-size:12px;padding:16px 2px 40px}
+.banner{display:flex;gap:10px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:14px;margin-top:14px}
 .tick,.cross{flex:none;width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:13px}
 .tick{background:var(--w)}.cross{background:var(--l)}
 details.fold{padding:0}details.fold>summary{list-style:none;cursor:pointer;padding:16px;display:flex;align-items:center;gap:10px}
@@ -49,26 +97,34 @@ details.fold>summary::-webkit-details-marker{display:none}details.fold>summary h
 details.fold>summary::after{content:"";width:8px;height:8px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);transition:transform .15s;margin-right:4px}
 details.fold[open]>summary::after{transform:rotate(-135deg)}.fold-body{padding:0 16px 16px}
 .sum-tag{font-size:12px;font-weight:700;background:var(--bg);border-radius:20px;padding:3px 9px}
-.note{font-size:12px;color:var(--muted);margin:10px 0 0}.target{font-size:14px;margin:14px 0 4px}
-.big-line{font-size:15px;margin:0 0 8px}
+.note{font-size:12px;color:var(--muted);margin:10px 0 0}.target{font-size:14px;margin:14px 0 4px}.big-line{font-size:15px;margin:0 0 8px}
 .nxs{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}
 .nx{background:var(--bg);border-radius:10px;padding:10px;border:2px solid transparent}.nx.hard{border-color:var(--l)}
 .nx-d{font-size:11px;color:var(--muted)}.nx-o{font-weight:700;font-size:13px;margin:2px 0 8px;line-height:1.25}.nx-o i{font-style:normal;color:var(--muted);font-weight:500}
 .mini{display:flex;height:6px;border-radius:3px;overflow:hidden;gap:2px}.mini .w{background:var(--w)}.mini .d{background:var(--d)}.mini .l{background:var(--l)}
-.nx-p{font-size:12px;margin-top:6px;color:var(--muted)}.nx-p b{color:var(--ink)}
+.nx-p{font-size:12px;margin-top:6px;color:var(--muted)}.nx-p b{color:var(--ink);font-family:var(--disp);font-size:16px}
 .chart-h{font-size:12px;color:var(--muted);margin:16px 0 4px}.chart{width:100%;height:auto;display:block}
 .chart .gl{stroke:var(--line);stroke-width:1}.chart .ax{fill:var(--muted);font-size:10px}
 .chart .ln{fill:none;stroke:var(--ink);stroke-width:2;stroke-linejoin:round}
 .chart .dot{fill:var(--ink);stroke:var(--card);stroke-width:2}.chart .lbl{fill:var(--ink);font-size:12px;font-weight:700}
 .sub-cell{font-size:11px;color:var(--muted);font-weight:400}.tbl i{font-style:normal}
-@media (max-width:520px){.tbl .hs{display:none}.league td,.league th{padding:6px 3px;font-size:12px}.grid{grid-template-columns:repeat(2,1fr)}.splits{grid-template-columns:1fr}h1{font-size:22px}}
-</style></head><body><div class="wrap">
-<header><div class="eyebrow">Pre-match · Division 3 North</div>
-<h1>Heacham Res<span class="vs">v</span>Dereham Town Dev</h1>
-<div class="sub">Sat 7 Nov · 14:00 · You're away · You: 2nd · Them: 4th</div></header>
+@media (max-width:520px){.tbl .hs{display:none}.league td,.league th{padding:6px 3px;font-size:12px}
+.grid{grid-template-columns:repeat(2,1fr)}.splits{grid-template-columns:1fr}.tname{font-size:17px}.badge{width:52px;height:52px;font-size:19px}}
+</style></head><body>
 
+<header class="hero"><div class="wrap">
+<div class="hero-top"><span>Division 3 North</span><span>Updated Sat 31 Oct · 20:37</span></div>
+<div class="teams"><div class="team"><div class="badge op"><span>HEA</span></div><div class="tname">Heacham Res</div><div class="tpos">4th</div></div>
+<div class="mid"><div class="ko">14:00</div><div class="day">Sat 7 Nov</div><div class="ground">Heacham Sports Field</div></div>
+<div class="team"><div class="badge me"><span>DER</span></div><div class="tname">Dereham Town Dev</div><div class="tpos">2nd · you</div></div></div>
+<div class="headline"><span class="big">37%</span><span class="txt">chance of a <b>Dereham Town Dev</b> win<br>Draw 19% · Lose 44%</span></div>
+</div></header>
+
+<nav class="tabs"><div class="wrap"><a href="#match" class="on">Match</a><a href="#them">Them</a><a href="#you">You</a><a href="#league">League</a></div></nav>
+
+<main class="wrap">
+<section id="match">
 <div class="banner"><span class="tick">✓</span><div><b>Last game:</b> the model gave you 81% to win v Easton Res — you won 5–0. <span class="muted">It picked a home win.</span></div></div>
-
 <section class="card"><h3>Prediction</h3>
 <div class="wdl"><div class="w" style="flex:0.372">37%</div><div class="d" style="flex:0.192">19%</div><div class="l" style="flex:0.435">44%</div></div>
 <div class="wdl-lab"><span>You win</span><span>Draw</span><span>You lose</span></div>
@@ -77,7 +133,9 @@ details.fold[open]>summary::after{transform:rotate(-135deg)}.fold-body{padding:0
 <div class="tile"><b>8%</b><span>Your clean sheet</span></div>
 <div class="tile"><b>84%</b><span>Both teams score</span></div>
 <div class="tile"><b>87%</b><span>3+ goals in game</span></div></div>
-<div class="scores"><span class='score'>2–2 <i>7%</i></span><span class='score'>1–2 <i>6%</i></span><span class='score'>2–3 <i>6%</i></span><span class='score'>2–1 <i>5%</i></span><span class='score'>3–2 <i>5%</i></span></div>
+<div class="sgrid-wrap"><table class="sgrid"><thead><tr><th class="corner"></th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr></thead>
+      <tbody><tr><th>0</th><td class="sg d" style="--t:0.16" title="You 0–0 them: 1.1%">1%</td><td class="sg w" style="--t:0.21" title="You 1–0 them: 1.4%">1%</td><td class="sg w" style="--t:0.31" title="You 2–0 them: 2.1%">2%</td><td class="sg w" style="--t:0.24" title="You 3–0 them: 1.6%">2%</td><td class="sg w" style="--t:0.14" title="You 4–0 them: 1.0%">1%</td></tr><tr><th>1</th><td class="sg l" style="--t:0.23" title="You 0–1 them: 1.5%">2%</td><td class="sg d dk" style="--t:0.72" title="You 1–1 them: 4.8%">5%</td><td class="sg w dk" style="--t:0.79" title="You 2–1 them: 5.3%">5%</td><td class="sg w dk" style="--t:0.62" title="You 3–1 them: 4.1%">4%</td><td class="sg w" style="--t:0.37" title="You 4–1 them: 2.4%">2%</td></tr><tr><th>2</th><td class="sg l" style="--t:0.36" title="You 0–2 them: 2.4%">2%</td><td class="sg l dk" style="--t:0.85" title="You 1–2 them: 5.7%">6%</td><td class="sg d dk top" style="--t:1.00" title="You 2–2 them: 6.7%">7%</td><td class="sg w dk" style="--t:0.79" title="You 3–2 them: 5.3%">5%</td><td class="sg w" style="--t:0.46" title="You 4–2 them: 3.1%">3%</td></tr><tr><th>3</th><td class="sg l" style="--t:0.30" title="You 0–3 them: 2.0%">2%</td><td class="sg l dk" style="--t:0.72" title="You 1–3 them: 4.8%">5%</td><td class="sg l dk" style="--t:0.85" title="You 2–3 them: 5.7%">6%</td><td class="sg d dk" style="--t:0.67" title="You 3–3 them: 4.5%">4%</td><td class="sg w" style="--t:0.39" title="You 4–3 them: 2.6%">3%</td></tr><tr><th>4</th><td class="sg l" style="--t:0.19" title="You 0–4 them: 1.3%">1%</td><td class="sg l" style="--t:0.46" title="You 1–4 them: 3.0%">3%</td><td class="sg l" style="--t:0.54" title="You 2–4 them: 3.6%">4%</td><td class="sg l" style="--t:0.42" title="You 3–4 them: 2.8%">3%</td><td class="sg d" style="--t:0.25" title="You 4–4 them: 1.7%">2%</td></tr></tbody></table>
+      <div class="sg-key"><span>Across: your goals · Down: theirs</span><span>Darker = more likely · outlined = most likely</span></div></div>
 <div class="conf">Confidence: <b>rough</b>. Still early in the season; the numbers will firm up over the next few weeks.</div></section>
 
 <section class="card"><h3>Things to know</h3><ul class="ins"><li>They're much better home (3.0 pts/game) than overall (2.2).</li><li>Watch A. Buhlemann: 6 goals in 5 games (all competitions).</li><li>Against the 3 teams you've both played, they've done better: 2.0 vs 3.0 pts/game.</li><li>They've kept 2 clean sheets in 3 home games — goals may be hard to come by.</li><li>Current run: unbeaten in 3.</li><li>They score 2+ in 100% of their games.</li></ul></section>
@@ -149,10 +207,11 @@ details.fold[open]>summary::after{transform:rotate(-135deg)}.fold-body{padding:0
           <div class="cmp-val ">1.16</div>
         </div>
 <p class="note">Ratings are adjusted for who each team has played. 1.00 = division average; higher is better.</p></section>
+</section>
 
-<section class="card"><h3>Heacham Res: key players</h3><div class="scroll"><table class="tbl"><thead><tr><th class="l">Top scorers</th><th>Apps</th><th>Goals</th><th>Assists</th><th>Cards</th></tr></thead><tbody><tr><td class='l'>A. Buhlemann</td><td>5</td><td><b>6</b></td><td></td><td>🟨</td></tr><tr><td class='l'>J. Rix</td><td>5</td><td><b>2</b></td><td></td><td></td></tr><tr><td class='l'>T. Marsh</td><td>6</td><td><b>1</b></td><td></td><td>🟨🟨</td></tr><tr><td class='l'>G. Rawlings</td><td>6</td><td><b>1</b></td><td></td><td></td></tr><tr><td class='l'>H. Buhlemann</td><td>5</td><td><b>1</b></td><td></td><td></td></tr><tr><td class='l'>T. Hunt</td><td>5</td><td><b>1</b></td><td></td><td></td></tr></tbody></table></div><p class="note">All competitions, as entered by the club on Full-Time (17 goals recorded, 21 players used). Some clubs don't record every scorer.</p></section>
-
-<section class="card"><h3>Heacham Res</h3>
+<section id="them"><h2 class="group">Heacham Res</h2>
+<section class="card"><h3>Key players</h3><div class="scroll"><table class="tbl"><thead><tr><th class="l">Top scorers</th><th>Apps</th><th>Goals</th><th>Assists</th><th>Cards</th></tr></thead><tbody><tr><td class='l'>A. Buhlemann</td><td>5</td><td><b>6</b></td><td></td><td><span class="bk y" title="Yellow cards"></span></td></tr><tr><td class='l'>J. Rix</td><td>5</td><td><b>2</b></td><td></td><td></td></tr><tr><td class='l'>T. Marsh</td><td>6</td><td><b>1</b></td><td></td><td><span class="bk y" title="Yellow cards"></span>2</td></tr><tr><td class='l'>G. Rawlings</td><td>6</td><td><b>1</b></td><td></td><td></td></tr><tr><td class='l'>H. Buhlemann</td><td>5</td><td><b>1</b></td><td></td><td></td></tr><tr><td class='l'>T. Hunt</td><td>5</td><td><b>1</b></td><td></td><td></td></tr></tbody></table></div><p class="note">All competitions, as entered by the club on Full-Time (17 goals recorded, 21 players used). Some clubs don't record every scorer.</p></section>
+<section class="card"><h3>Form & record</h3>
 <div class="snap"><div><span class="big">4th</span><small>Position</small></div>
 <div><span class="big">2.17</span><small>Pts / game</small></div>
 <div><span class="chip W">W</span><span class="chip L">L</span><span class="chip W">W</span><span class="chip W">W</span><span class="chip D">D</span><small>Last 5 (oldest → newest) · Unbeaten in 3</small></div></div>
@@ -169,8 +228,7 @@ details.fold[open]>summary::after{transform:rotate(-135deg)}.fold-body{padding:0
       <div class="kv"><span>Conceded / game</span><b>2.7</b></div>
       <div class="kv"><span>Clean sheets</span><b>33%</b></div>
       <div class="kv"><span>Conceded 2+</span><b>67%</b></div></div></div></section>
-
-<details class="card fold"><summary><h3>Heacham Res: recent results</h3></summary><div class="fold-body"><ul class="games"><li><span class="chip D">D</span>
+<details class="card fold"><summary><h3>Recent results</h3></summary><div class="fold-body"><ul class="games"><li><span class="chip D">D</span>
           <span class="gl-date">Sat 31 Oct</span>
           <span class="gl-opp">KLSC <i>(A)</i></span>
           <b class="gl-score">4–4</b></li><li><span class="chip W">W</span>
@@ -193,7 +251,9 @@ details.fold[open]>summary::after{transform:rotate(-135deg)}.fold-body{padding:0
 <details class="card fold"><summary><h3>Common opponents</h3><span class="sum-tag">3</span></summary><div class="fold-body"><div class="scroll"><table class="tbl"><thead><tr><th>Opponent</th><th>Dereham Town Dev</th>
       <th>Heacham Res</th></tr></thead><tbody><tr><td>Attleborough Town Res</td><td><span class="chip W sm">4–2</span></td><td><span class="chip W sm">2–0</span></td></tr><tr><td>Dersingham Rovers Res</td><td><span class="chip L sm">2–3</span></td><td><span class="chip W sm">2–1</span></td></tr><tr><td>Easton Res</td><td><span class="chip W sm">5–0</span></td><td><span class="chip W sm">4–0</span></td></tr></tbody></table></div></div></details>
 <details class="card fold"><summary><h3>Head to head</h3></summary><div class="fold-body"><ul class="plain"><li class='muted'>No meetings this season.</li></ul></div></details>
+</section>
 
+<section id="you"><h2 class="group">Dereham Town Dev</h2>
 <section class="card"><h3>Your next 5 games</h3><div class="nxs"><div class="nx"><div class="nx-d">Sat 7 Nov</div>
           <div class="nx-o">Heacham Res <i>(A)</i></div>
           <div class="mini"><span class="w" style="flex:0.372"></span><span class="d" style="flex:0.192"></span><span class="l" style="flex:0.435"></span></div>
@@ -211,8 +271,6 @@ details.fold[open]>summary::after{transform:rotate(-135deg)}.fold-body{padding:0
           <div class="mini"><span class="w" style="flex:0.267"></span><span class="d" style="flex:0.205"></span><span class="l" style="flex:0.528"></span></div>
           <div class="nx-p"><b>27%</b> win · toughest</div></div></div><p class="note">Win chances from today's ratings. Green = win, grey = draw, red = loss.</p></section>
 <section class="card"><h3>Your season</h3><div class="grid"><div class="tile"><b>15</b><span>Points (7 played)</span></div><div class="tile"><b>51</b><span>Projected points</span></div><div class="tile"><b>24%</b><span>Win the league</span></div><div class="tile"><b>63%</b><span>Finish top 3</span></div></div><p class="target">Champions usually finish on about <b>57 points</b>. You need <b>42 more from 19 games</b> (2.2 per game; you're averaging 2.1).</p><div class="chart-h">League position after each game</div><svg viewBox="0 0 340 170" class="chart" role="img" aria-label="League position after each game"><line x1="34" x2="310" y1="14.0" y2="14.0" class="gl"/><text x="28" y="18.0" class="ax" text-anchor="end">1st</text><line x1="34" x2="310" y1="74.0" y2="74.0" class="gl"/><text x="28" y="78.0" class="ax" text-anchor="end">7th</text><line x1="34" x2="310" y1="144.0" y2="144.0" class="gl"/><text x="28" y="148.0" class="ax" text-anchor="end">14th</text><polyline points="34.0,114.0 80.0,114.0 126.0,94.0 172.0,94.0 218.0,74.0 264.0,34.0 310.0,24.0" class="ln"/><circle cx="34.0" cy="114.0" r="5" class="dot"><title>Sat 29 Aug: Dersingham Rovers Res (A) 2–3 · 11th, 0 pts</title></circle><circle cx="80.0" cy="114.0" r="5" class="dot"><title>Sat 5 Sep: Terrington Tigers (A) 1–2 · 11th, 0 pts</title></circle><circle cx="126.0" cy="94.0" r="5" class="dot"><title>Sat 26 Sep: Attleborough Town Res (A) 4–2 · 9th, 3 pts</title></circle><circle cx="172.0" cy="94.0" r="5" class="dot"><title>Sat 3 Oct: Gayton United (A) 3–1 · 9th, 6 pts</title></circle><circle cx="218.0" cy="74.0" r="5" class="dot"><title>Sat 24 Oct: AFC Lynn (A) 3–2 · 7th, 9 pts</title></circle><circle cx="264.0" cy="34.0" r="5" class="dot"><title>Tue 27 Oct: North Walsham Town Res (A) 4–2 · 3rd, 12 pts</title></circle><circle cx="310.0" cy="24.0" r="5" class="dot"><title>Sat 31 Oct: Easton Res (H) 5–0 · 2nd, 15 pts</title></circle><text x="318.0" y="28.0" class="lbl">2nd</text><text x="34.0" y="164" class="ax" text-anchor="start">Sat 29 Aug</text><text x="310.0" y="164" class="ax" text-anchor="end">Sat 31 Oct</text></svg></section>
-<details class="card fold"><summary><h3>How good is the model?</h3><span class="sum-tag">64% right</span></summary><div class="fold-body"><p class="big-line">Tested on <b>28 past games</b>, it picked the right result <b>18 times (64%)</b>.</p><ul class="ins"><li>Just backing the home team every time would have got 16 (57%).</li><li>When it was confident (60%+), it was right 8 of 13 times (62%).</li></ul><div class="scroll"><table class="tbl"><thead><tr><th class="l">Your games</th><th>Win chance given</th><th>Result</th><th>Right?</th></tr></thead><tbody><tr title='Win 81% · Draw 10% · Lose 8%'><td class='l'>Easton Res <i class='muted'>(H)</i><div class='sub-cell'>Sat 31 Oct</div></td><td>81%</td><td><span class='chip W sm'>5–0</span></td><td>✓</td></tr><tr title='Win 77% · Draw 11% · Lose 11%'><td class='l'>North Walsham Tow… <i class='muted'>(A)</i><div class='sub-cell'>Tue 27 Oct</div></td><td>77%</td><td><span class='chip W sm'>4–2</span></td><td>✓</td></tr><tr title='Win 25% · Draw 17% · Lose 59%'><td class='l'>AFC Lynn <i class='muted'>(A)</i><div class='sub-cell'>Sat 24 Oct</div></td><td>25%</td><td><span class='chip W sm'>3–2</span></td><td>✗</td></tr><tr title='Win 41% · Draw 18% · Lose 41%'><td class='l'>Gayton United <i class='muted'>(A)</i><div class='sub-cell'>Sat 3 Oct</div></td><td>41%</td><td><span class='chip W sm'>3–1</span></td><td>✓</td></tr><tr title='Win 38% · Draw 20% · Lose 42%'><td class='l'>Attleborough Town… <i class='muted'>(A)</i><div class='sub-cell'>Sat 26 Sep</div></td><td>38%</td><td><span class='chip W sm'>4–2</span></td><td>✗</td></tr></tbody></table></div><p class="note">Each game was predicted using only the results from before that day, exactly how it predicts your next game, so this is a fair test. Early-season games are skipped until there's enough to go on.</p></div></details>
-<details class="card fold"><summary><h3>League table & projection</h3></summary><div class="fold-body"><div class="scroll"><table class="tbl league"><thead><tr><th>#</th><th class='l'>Team</th><th>P</th><th class='hs'>W</th><th class='hs'>D</th><th class='hs'>L</th><th>GD</th><th>Pts</th><th title='Projected final points'>Proj</th><th title='Chance of finishing top'>Top</th><th title='Chance of finishing top 3'>Top 3</th></tr></thead><tbody><tr class=''><td>1</td><td class='l'>AFC Lynn</td><td>7</td><td class='hs'>6</td><td class='hs'>0</td><td class='hs'>1</td><td>+18</td><td><b>18</b></td><td>51</td><td>20%</td><td>57%</td></tr><tr class='me'><td>2</td><td class='l'>Dereham Town Dev</td><td>7</td><td class='hs'>5</td><td class='hs'>0</td><td class='hs'>2</td><td>+10</td><td><b>15</b></td><td>51</td><td>24%</td><td>63%</td></tr><tr class=''><td>3</td><td class='l'>Bradenham &amp; Mattishall</td><td>7</td><td class='hs'>4</td><td class='hs'>2</td><td class='hs'>1</td><td>+15</td><td><b>14</b></td><td>52</td><td>29%</td><td>70%</td></tr><tr class='opp'><td>4</td><td class='l'>Heacham Res</td><td>6</td><td class='hs'>4</td><td class='hs'>1</td><td class='hs'>1</td><td>+11</td><td><b>13</b></td><td>47</td><td>9%</td><td>35%</td></tr><tr class=''><td>5</td><td class='l'>Terrington Tigers</td><td>5</td><td class='hs'>4</td><td class='hs'>1</td><td class='hs'>0</td><td>+5</td><td><b>13</b></td><td>50</td><td>15%</td><td>51%</td></tr><tr class=''><td>6</td><td class='l'>Holt United Res</td><td>8</td><td class='hs'>4</td><td class='hs'>1</td><td class='hs'>3</td><td>+2</td><td><b>13</b></td><td>44</td><td>2%</td><td>14%</td></tr><tr class=''><td>7</td><td class='l'>Dersingham Rovers Res</td><td>8</td><td class='hs'>3</td><td class='hs'>1</td><td class='hs'>4</td><td>+1</td><td><b>10</b></td><td>36</td><td>0%</td><td>1%</td></tr><tr class=''><td>8</td><td class='l'>Gayton United</td><td>6</td><td class='hs'>3</td><td class='hs'>0</td><td class='hs'>3</td><td>-2</td><td><b>9</b></td><td>36</td><td>0%</td><td>1%</td></tr><tr class=''><td>9</td><td class='l'>KLSC</td><td>6</td><td class='hs'>2</td><td class='hs'>1</td><td class='hs'>3</td><td>+1</td><td><b>7</b></td><td>38</td><td>0%</td><td>2%</td></tr><tr class=''><td>10</td><td class='l'>Attleborough Town Res</td><td>6</td><td class='hs'>2</td><td class='hs'>1</td><td class='hs'>3</td><td>-3</td><td><b>7</b></td><td>40</td><td>0%</td><td>4%</td></tr><tr class=''><td>11</td><td class='l'>Briston</td><td>5</td><td class='hs'>2</td><td class='hs'>0</td><td class='hs'>3</td><td>+2</td><td><b>6</b></td><td>36</td><td>0%</td><td>1%</td></tr><tr class=''><td>12</td><td class='l'>North Walsham Town Res</td><td>5</td><td class='hs'>1</td><td class='hs'>0</td><td class='hs'>4</td><td>-17</td><td><b>3</b></td><td>16</td><td>0%</td><td>0%</td></tr><tr class=''><td>13</td><td class='l'>UEA Res</td><td>5</td><td class='hs'>0</td><td class='hs'>0</td><td class='hs'>5</td><td>-20</td><td><b>0</b></td><td>10</td><td>0%</td><td>0%</td></tr><tr class=''><td>14</td><td class='l'>Easton Res</td><td>7</td><td class='hs'>0</td><td class='hs'>0</td><td class='hs'>7</td><td>-23</td><td><b>0</b></td><td>13</td><td>0%</td><td>0%</td></tr></tbody></table></div><p class="note">Worked out from results on Full-Time (points deductions aren't included). Proj / Top / Top 3 come from simulating the rest of the season 5,000 times.</p></div></details>
 <details class="card fold"><summary><h3>Your recent results</h3></summary><div class="fold-body"><ul class="games"><li><span class="chip W">W</span>
           <span class="gl-date">Sat 31 Oct</span>
           <span class="gl-opp">Easton Res <i>(H)</i></span>
@@ -235,7 +293,28 @@ details.fold[open]>summary::after{transform:rotate(-135deg)}.fold-body{padding:0
           <span class="gl-date">Sat 29 Aug</span>
           <span class="gl-opp">Dersingham Rovers Res <i>(A)</i></span>
           <b class="gl-score">2–3</b></li></ul></div></details>
+</section>
 
-<footer>Data from FA Full-Time · 44 league results · updated 31 Oct 2026 19:43.
+<section id="league"><h2 class="group">League</h2>
+<details class="card fold" open><summary><h3>Table & projection</h3></summary><div class="fold-body"><div class="scroll"><table class="tbl league"><thead><tr><th>#</th><th class='l'>Team</th><th>P</th><th class='hs'>W</th><th class='hs'>D</th><th class='hs'>L</th><th>GD</th><th>Pts</th><th title='Projected final points'>Proj</th><th title='Chance of finishing top'>Top</th><th title='Chance of finishing top 3'>Top 3</th></tr></thead><tbody><tr class=''><td>1</td><td class='l'>AFC Lynn</td><td>7</td><td class='hs'>6</td><td class='hs'>0</td><td class='hs'>1</td><td>+18</td><td><b>18</b></td><td>51</td><td>20%</td><td>57%</td></tr><tr class='me'><td>2</td><td class='l'>Dereham Town Dev</td><td>7</td><td class='hs'>5</td><td class='hs'>0</td><td class='hs'>2</td><td>+10</td><td><b>15</b></td><td>51</td><td>24%</td><td>63%</td></tr><tr class=''><td>3</td><td class='l'>Bradenham &amp; Mattishall</td><td>7</td><td class='hs'>4</td><td class='hs'>2</td><td class='hs'>1</td><td>+15</td><td><b>14</b></td><td>52</td><td>29%</td><td>70%</td></tr><tr class='opp'><td>4</td><td class='l'>Heacham Res</td><td>6</td><td class='hs'>4</td><td class='hs'>1</td><td class='hs'>1</td><td>+11</td><td><b>13</b></td><td>47</td><td>9%</td><td>35%</td></tr><tr class=''><td>5</td><td class='l'>Terrington Tigers</td><td>5</td><td class='hs'>4</td><td class='hs'>1</td><td class='hs'>0</td><td>+5</td><td><b>13</b></td><td>50</td><td>15%</td><td>51%</td></tr><tr class=''><td>6</td><td class='l'>Holt United Res</td><td>8</td><td class='hs'>4</td><td class='hs'>1</td><td class='hs'>3</td><td>+2</td><td><b>13</b></td><td>44</td><td>2%</td><td>14%</td></tr><tr class=''><td>7</td><td class='l'>Dersingham Rovers Res</td><td>8</td><td class='hs'>3</td><td class='hs'>1</td><td class='hs'>4</td><td>+1</td><td><b>10</b></td><td>36</td><td>0%</td><td>1%</td></tr><tr class=''><td>8</td><td class='l'>Gayton United</td><td>6</td><td class='hs'>3</td><td class='hs'>0</td><td class='hs'>3</td><td>-2</td><td><b>9</b></td><td>36</td><td>0%</td><td>1%</td></tr><tr class=''><td>9</td><td class='l'>KLSC</td><td>6</td><td class='hs'>2</td><td class='hs'>1</td><td class='hs'>3</td><td>+1</td><td><b>7</b></td><td>38</td><td>0%</td><td>2%</td></tr><tr class=''><td>10</td><td class='l'>Attleborough Town Res</td><td>6</td><td class='hs'>2</td><td class='hs'>1</td><td class='hs'>3</td><td>-3</td><td><b>7</b></td><td>40</td><td>0%</td><td>4%</td></tr><tr class=''><td>11</td><td class='l'>Briston</td><td>5</td><td class='hs'>2</td><td class='hs'>0</td><td class='hs'>3</td><td>+2</td><td><b>6</b></td><td>36</td><td>0%</td><td>1%</td></tr><tr class=''><td>12</td><td class='l'>North Walsham Town Res</td><td>5</td><td class='hs'>1</td><td class='hs'>0</td><td class='hs'>4</td><td>-17</td><td><b>3</b></td><td>16</td><td>0%</td><td>0%</td></tr><tr class=''><td>13</td><td class='l'>UEA Res</td><td>5</td><td class='hs'>0</td><td class='hs'>0</td><td class='hs'>5</td><td>-20</td><td><b>0</b></td><td>10</td><td>0%</td><td>0%</td></tr><tr class=''><td>14</td><td class='l'>Easton Res</td><td>7</td><td class='hs'>0</td><td class='hs'>0</td><td class='hs'>7</td><td>-23</td><td><b>0</b></td><td>13</td><td>0%</td><td>0%</td></tr></tbody></table></div><p class="note">Worked out from results on Full-Time (points deductions aren't included). Proj / Top / Top 3 come from simulating the rest of the season 5,000 times.</p></div></details>
+<details class="card fold"><summary><h3>How good is the model?</h3><span class="sum-tag">64% right</span></summary><div class="fold-body"><p class="big-line">Tested on <b>28 past games</b>, it picked the right result <b>18 times (64%)</b>.</p><ul class="ins"><li>Just backing the home team every time would have got 16 (57%).</li><li>When it was confident (60%+), it was right 8 of 13 times (62%).</li></ul><div class="scroll"><table class="tbl"><thead><tr><th class="l">Your games</th><th>Win chance given</th><th>Result</th><th>Right?</th></tr></thead><tbody><tr title='Win 81% · Draw 10% · Lose 8%'><td class='l'>Easton Res <i class='muted'>(H)</i><div class='sub-cell'>Sat 31 Oct</div></td><td>81%</td><td><span class='chip W sm'>5–0</span></td><td>✓</td></tr><tr title='Win 77% · Draw 11% · Lose 11%'><td class='l'>North Walsham Tow… <i class='muted'>(A)</i><div class='sub-cell'>Tue 27 Oct</div></td><td>77%</td><td><span class='chip W sm'>4–2</span></td><td>✓</td></tr><tr title='Win 25% · Draw 17% · Lose 59%'><td class='l'>AFC Lynn <i class='muted'>(A)</i><div class='sub-cell'>Sat 24 Oct</div></td><td>25%</td><td><span class='chip W sm'>3–2</span></td><td>✗</td></tr><tr title='Win 41% · Draw 18% · Lose 41%'><td class='l'>Gayton United <i class='muted'>(A)</i><div class='sub-cell'>Sat 3 Oct</div></td><td>41%</td><td><span class='chip W sm'>3–1</span></td><td>✓</td></tr><tr title='Win 38% · Draw 20% · Lose 42%'><td class='l'>Attleborough Town… <i class='muted'>(A)</i><div class='sub-cell'>Sat 26 Sep</div></td><td>38%</td><td><span class='chip W sm'>4–2</span></td><td>✗</td></tr></tbody></table></div><p class="note">Each game was predicted using only the results from before that day, exactly how it predicts your next game, so this is a fair test. Early-season games are skipped until there's enough to go on.</p></div></details>
+</section>
+</main>
+
+<footer class="wrap">Data from FA Full-Time · 44 league results · updated Sat 31 Oct · 20:37.
 Probabilities come from a goals model fitted to every result in the division, weighted towards recent games. It knows nothing about who's available on the day.</footer>
-</div></body></html>
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.tabs a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+  function update(){
+    var y=window.scrollY+80, cur=0;
+    secs.forEach(function(s,i){ if(s && s.offsetTop<=y) cur=i; });
+    if((window.innerHeight+window.scrollY)>=document.body.offsetHeight-4) cur=secs.length-1;
+    links.forEach(function(a,i){ a.classList.toggle('on', i===cur); });
+  }
+  window.addEventListener('scroll', update, {passive:true}); update();
+})();
+</script>
+</body></html>
