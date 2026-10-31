@@ -1,0 +1,194 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>vs Heacham Res · Match Stats</title>
+<style>
+:root{--bg:#f4f4f1;--card:#fff;--ink:#141414;--muted:#6b6b6b;--line:#e2e2dc;--acc:#c8102e;--w:#1f9d55;--d:#9a9a9a;--l:#d64545;--barme:#141414;--barop:#c8102e}
+@media (prefers-color-scheme:dark){:root{--bg:#0f0f10;--card:#19191b;--ink:#f2f2f0;--muted:#9a9a9a;--line:#2a2a2d;--acc:#ff4d61;--barme:#f2f2f0;--barop:#ff4d61}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+header{padding:8px 0 14px}.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+h1{font-size:26px;line-height:1.15;margin:4px 0 6px;font-weight:800}h1 .vs{color:var(--acc);font-weight:700;padding:0 4px}
+.sub{color:var(--muted);font-size:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:12px 0}
+.card h3{margin:0 0 12px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.wdl{display:flex;height:44px;border-radius:10px;overflow:hidden;font-weight:800}
+.wdl div{display:flex;align-items:center;justify-content:center;color:#fff;min-width:44px;font-size:15px}
+.wdl .w{background:var(--w)}.wdl .d{background:var(--d)}.wdl .l{background:var(--l)}
+.wdl-lab{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:6px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}
+.tile{background:var(--bg);border-radius:10px;padding:10px;text-align:center}.tile b{display:block;font-size:20px}.tile span{font-size:11px;color:var(--muted)}
+.scores{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}.score{background:var(--bg);border-radius:8px;padding:5px 9px;font-weight:700}.score i{font-style:normal;color:var(--muted);font-weight:500;font-size:12px}
+.conf{font-size:12px;color:var(--muted);margin-top:12px}.conf b{color:var(--ink)}
+ul.ins{margin:0;padding-left:18px}ul.ins li{margin:6px 0}
+.who{display:flex;justify-content:space-between;font-weight:800;font-size:14px;margin-bottom:6px}.who .o{color:var(--acc)}
+.cmp{display:grid;grid-template-columns:56px 1fr 56px;align-items:center;gap:8px;padding:6px 0;border-top:1px solid var(--line)}
+.cmp-val{text-align:center;font-weight:600;color:var(--muted)}.cmp-val.win{color:var(--ink);font-weight:800}
+.cmp-label{text-align:center;font-size:12px;color:var(--muted)}.bars{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.bar{height:6px;background:var(--bg);border-radius:3px;display:flex;overflow:hidden}.bar.l{justify-content:flex-end}
+.bar.l span{background:var(--barme)}.bar.r span{background:var(--barop)}
+.snap{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:12px}.snap .big{font-size:28px;font-weight:800}.snap small{display:block;color:var(--muted);font-size:11px}
+.chip{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:6px;color:#fff;font-weight:800;font-size:12px;margin-right:3px}
+.chip.sm{width:auto;padding:0 6px;height:20px;font-size:11px}.chip.W{background:var(--w)}.chip.D{background:var(--d)}.chip.L{background:var(--l)}
+.splits{display:grid;grid-template-columns:1fr 1fr;gap:10px}.split{background:var(--bg);border-radius:10px;padding:10px 12px;border:2px solid transparent}.split.hl{border-color:var(--acc)}
+.split h4{margin:0 0 6px;font-size:13px}.kv{display:flex;justify-content:space-between;font-size:13px;padding:2px 0}.kv span{color:var(--muted)}
+ul.games{list-style:none;margin:0;padding:0}ul.games li{display:grid;grid-template-columns:30px 76px 1fr auto;align-items:center;gap:6px;padding:6px 0;border-top:1px solid var(--line);font-size:14px}
+.gl-date{color:var(--muted);font-size:12px}.gl-opp i{color:var(--muted);font-style:normal;font-size:12px}
+.scroll{overflow-x:auto}table.tbl{width:100%;border-collapse:collapse;font-size:13px}
+.tbl th{font-size:11px;color:var(--muted);font-weight:600;text-align:center;padding:6px 4px;border-bottom:1px solid var(--line)}
+.tbl td{text-align:center;padding:6px 4px;border-bottom:1px solid var(--line);white-space:nowrap}.tbl .l{text-align:left}
+.tbl tr.me td{background:color-mix(in srgb,var(--ink) 9%,transparent);font-weight:700}.tbl tr.opp td{background:color-mix(in srgb,var(--acc) 14%,transparent);font-weight:700}
+.muted{color:var(--muted)}ul.plain{margin:0;padding-left:18px}
+footer{color:var(--muted);font-size:12px;padding:12px 0 30px}
+@media (max-width:520px){.grid{grid-template-columns:repeat(2,1fr)}.splits{grid-template-columns:1fr}h1{font-size:22px}}
+</style></head><body><div class="wrap">
+<header><div class="eyebrow">Pre-match · Division 3 North</div>
+<h1>Heacham Res<span class="vs">v</span>Dereham Town Dev</h1>
+<div class="sub">Sat 7 Nov · 14:00 · You're away · You: 2nd · Them: 4th</div></header>
+
+<section class="card"><h3>Prediction</h3>
+<div class="wdl"><div class="w" style="flex:0.372">37%</div><div class="d" style="flex:0.192">19%</div><div class="l" style="flex:0.435">44%</div></div>
+<div class="wdl-lab"><span>You win</span><span>Draw</span><span>You lose</span></div>
+<div class="grid">
+<div class="tile"><b>2.4–2.5</b><span>Expected goals</span></div>
+<div class="tile"><b>8%</b><span>Your clean sheet</span></div>
+<div class="tile"><b>84%</b><span>Both teams score</span></div>
+<div class="tile"><b>87%</b><span>3+ goals in game</span></div></div>
+<div class="scores"><span class='score'>2–2 <i>7%</i></span><span class='score'>1–2 <i>6%</i></span><span class='score'>2–3 <i>6%</i></span><span class='score'>2–1 <i>5%</i></span><span class='score'>3–2 <i>5%</i></span></div>
+<div class="conf">Confidence: <b>rough</b>. Still early in the season; the numbers will firm up over the next few weeks.</div></section>
+
+<section class="card"><h3>Things to know</h3><ul class="ins"><li>They're much better home (3.0 pts/game) than overall (2.2).</li><li>Against the 3 teams you've both played, they've done better: 2.0 vs 3.0 pts/game.</li><li>They've kept 2 clean sheets in 3 home games — goals may be hard to come by.</li><li>Current run: unbeaten in 3.</li><li>They score 2+ in 100% of their games.</li></ul></section>
+
+<section class="card" id="share-end"><h3>You vs them</h3>
+<div class="who"><span>Dereham Town Dev</span><span class="o">Heacham Res</span></div>
+
+        <div class="cmp">
+          <div class="cmp-val ">2.14</div>
+          <div class="cmp-mid">
+            <div class="cmp-label">Points per game</div>
+            <div class="bars"><div class="bar l"><span style="width:71%"></span></div>
+            <div class="bar r"><span style="width:72%"></span></div></div>
+          </div>
+          <div class="cmp-val win">2.17</div>
+        </div>
+        <div class="cmp">
+          <div class="cmp-val ">3.1</div>
+          <div class="cmp-mid">
+            <div class="cmp-label">Goals scored / game</div>
+            <div class="bars"><div class="bar l"><span style="width:94%"></span></div>
+            <div class="bar r"><span style="width:100%"></span></div></div>
+          </div>
+          <div class="cmp-val win">3.3</div>
+        </div>
+        <div class="cmp">
+          <div class="cmp-val ">1.7</div>
+          <div class="cmp-mid">
+            <div class="cmp-label">Goals conceded / game</div>
+            <div class="bars"><div class="bar l"><span style="width:100%"></span></div>
+            <div class="bar r"><span style="width:88%"></span></div></div>
+          </div>
+          <div class="cmp-val win">1.5</div>
+        </div>
+        <div class="cmp">
+          <div class="cmp-val ">14%</div>
+          <div class="cmp-mid">
+            <div class="cmp-label">Clean sheets</div>
+            <div class="bars"><div class="bar l"><span style="width:14%"></span></div>
+            <div class="bar r"><span style="width:50%"></span></div></div>
+          </div>
+          <div class="cmp-val win">50%</div>
+        </div>
+        <div class="cmp">
+          <div class="cmp-val ">0%</div>
+          <div class="cmp-mid">
+            <div class="cmp-label">Failed to score</div>
+            <div class="bars"><div class="bar l"><span style="width:0%"></span></div>
+            <div class="bar r"><span style="width:0%"></span></div></div>
+          </div>
+          <div class="cmp-val ">0%</div>
+        </div>
+        <div class="cmp">
+          <div class="cmp-val win">1.21</div>
+          <div class="cmp-mid">
+            <div class="cmp-label">Attack rating</div>
+            <div class="bars"><div class="bar l"><span style="width:100%"></span></div>
+            <div class="bar r"><span style="width:96%"></span></div></div>
+          </div>
+          <div class="cmp-val ">1.16</div>
+        </div>
+        <div class="cmp">
+          <div class="cmp-val win">1.22</div>
+          <div class="cmp-mid">
+            <div class="cmp-label">Defence rating</div>
+            <div class="bars"><div class="bar l"><span style="width:100%"></span></div>
+            <div class="bar r"><span style="width:94%"></span></div></div>
+          </div>
+          <div class="cmp-val ">1.16</div>
+        </div>
+<p class="muted" style="font-size:12px;margin:10px 0 0">Ratings are adjusted for who each team has played. 1.00 = division average; higher is better.</p></section>
+
+<section class="card"><h3>Heacham Res</h3>
+<div class="snap"><div><span class="big">4th</span><small>Position</small></div>
+<div><span class="big">2.17</span><small>Pts / game</small></div>
+<div><span class="chip W">W</span><span class="chip L">L</span><span class="chip W">W</span><span class="chip W">W</span><span class="chip D">D</span><small>Last 5 (oldest → newest) · Unbeaten in 3</small></div></div>
+<div class="splits"><div class="split hl"><h4>Home · this game</h4>
+      <div class="kv"><span>Record</span><b>W3 D0 L0</b></div>
+      <div class="kv"><span>Pts / game</span><b>3.00</b></div>
+      <div class="kv"><span>Scored / game</span><b>2.7</b></div>
+      <div class="kv"><span>Conceded / game</span><b>0.3</b></div>
+      <div class="kv"><span>Clean sheets</span><b>67%</b></div>
+      <div class="kv"><span>Conceded 2+</span><b>0%</b></div></div><div class="split "><h4>Away</h4>
+      <div class="kv"><span>Record</span><b>W1 D1 L1</b></div>
+      <div class="kv"><span>Pts / game</span><b>1.33</b></div>
+      <div class="kv"><span>Scored / game</span><b>4.0</b></div>
+      <div class="kv"><span>Conceded / game</span><b>2.7</b></div>
+      <div class="kv"><span>Clean sheets</span><b>33%</b></div>
+      <div class="kv"><span>Conceded 2+</span><b>67%</b></div></div></div>
+<h3 style="margin-top:16px">Recent results</h3><ul class="games"><li><span class="chip D">D</span>
+          <span class="gl-date">Sat 31 Oct</span>
+          <span class="gl-opp">KLSC <i>(A)</i></span>
+          <b class="gl-score">4–4</b></li><li><span class="chip W">W</span>
+          <span class="gl-date">Sat 24 Oct</span>
+          <span class="gl-opp">Dersingham Rovers Res <i>(H)</i></span>
+          <b class="gl-score">2–1</b></li><li><span class="chip W">W</span>
+          <span class="gl-date">Sat 10 Oct</span>
+          <span class="gl-opp">Easton Res <i>(H)</i></span>
+          <b class="gl-score">4–0</b></li><li><span class="chip L">L</span>
+          <span class="gl-date">Sat 3 Oct</span>
+          <span class="gl-opp">Holt United Res <i>(A)</i></span>
+          <b class="gl-score">2–4</b></li><li><span class="chip W">W</span>
+          <span class="gl-date">Sat 26 Sep</span>
+          <span class="gl-opp">UEA Res <i>(A)</i></span>
+          <b class="gl-score">6–0</b></li><li><span class="chip W">W</span>
+          <span class="gl-date">Sat 29 Aug</span>
+          <span class="gl-opp">Attleborough Town Res <i>(H)</i></span>
+          <b class="gl-score">2–0</b></li></ul></section>
+
+<section class="card"><h3>Common opponents</h3><div class="scroll"><table class="tbl"><thead><tr><th>Opponent</th><th>Dereham Town Dev</th>
+      <th>Heacham Res</th></tr></thead><tbody><tr><td>Attleborough Town Res</td><td><span class="chip W sm">4–2</span></td><td><span class="chip W sm">2–0</span></td></tr><tr><td>Dersingham Rovers Res</td><td><span class="chip L sm">2–3</span></td><td><span class="chip W sm">2–1</span></td></tr><tr><td>Easton Res</td><td><span class="chip W sm">5–0</span></td><td><span class="chip W sm">4–0</span></td></tr></tbody></table></div></section>
+
+<section class="card"><h3>Head to head</h3><ul class="plain"><li class='muted'>No meetings this season.</li></ul></section>
+
+<section class="card"><h3>Your recent results</h3><ul class="games"><li><span class="chip W">W</span>
+          <span class="gl-date">Sat 31 Oct</span>
+          <span class="gl-opp">Easton Res <i>(H)</i></span>
+          <b class="gl-score">5–0</b></li><li><span class="chip W">W</span>
+          <span class="gl-date">Tue 27 Oct</span>
+          <span class="gl-opp">North Walsham Town Res <i>(A)</i></span>
+          <b class="gl-score">4–2</b></li><li><span class="chip W">W</span>
+          <span class="gl-date">Sat 24 Oct</span>
+          <span class="gl-opp">AFC Lynn <i>(A)</i></span>
+          <b class="gl-score">3–2</b></li><li><span class="chip W">W</span>
+          <span class="gl-date">Sat 3 Oct</span>
+          <span class="gl-opp">Gayton United <i>(A)</i></span>
+          <b class="gl-score">3–1</b></li><li><span class="chip W">W</span>
+          <span class="gl-date">Sat 26 Sep</span>
+          <span class="gl-opp">Attleborough Town Res <i>(A)</i></span>
+          <b class="gl-score">4–2</b></li></ul></section>
+
+<section class="card"><h3>Table & season projection</h3><div class="scroll"><table class="tbl league"><thead><tr><th>#</th><th class='l'>Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th><th title='Projected final points'>Proj</th><th title='Chance of finishing top'>Top</th><th title='Chance of finishing top 3'>Top 3</th></tr></thead><tbody><tr class=''><td>1</td><td class='l'>AFC Lynn</td><td>7</td><td>6</td><td>0</td><td>1</td><td>+18</td><td><b>18</b></td><td>51</td><td>20%</td><td>57%</td></tr><tr class='me'><td>2</td><td class='l'>Dereham Town Dev</td><td>7</td><td>5</td><td>0</td><td>2</td><td>+10</td><td><b>15</b></td><td>51</td><td>24%</td><td>63%</td></tr><tr class=''><td>3</td><td class='l'>Bradenham &amp; Mattishall</td><td>7</td><td>4</td><td>2</td><td>1</td><td>+15</td><td><b>14</b></td><td>52</td><td>29%</td><td>70%</td></tr><tr class='opp'><td>4</td><td class='l'>Heacham Res</td><td>6</td><td>4</td><td>1</td><td>1</td><td>+11</td><td><b>13</b></td><td>47</td><td>9%</td><td>35%</td></tr><tr class=''><td>5</td><td class='l'>Terrington Tigers</td><td>5</td><td>4</td><td>1</td><td>0</td><td>+5</td><td><b>13</b></td><td>50</td><td>15%</td><td>51%</td></tr><tr class=''><td>6</td><td class='l'>Holt United Res</td><td>8</td><td>4</td><td>1</td><td>3</td><td>+2</td><td><b>13</b></td><td>44</td><td>2%</td><td>14%</td></tr><tr class=''><td>7</td><td class='l'>Dersingham Rovers Res</td><td>8</td><td>3</td><td>1</td><td>4</td><td>+1</td><td><b>10</b></td><td>36</td><td>0%</td><td>1%</td></tr><tr class=''><td>8</td><td class='l'>Gayton United</td><td>6</td><td>3</td><td>0</td><td>3</td><td>-2</td><td><b>9</b></td><td>36</td><td>0%</td><td>1%</td></tr><tr class=''><td>9</td><td class='l'>KLSC</td><td>6</td><td>2</td><td>1</td><td>3</td><td>+1</td><td><b>7</b></td><td>38</td><td>0%</td><td>2%</td></tr><tr class=''><td>10</td><td class='l'>Attleborough Town Res</td><td>6</td><td>2</td><td>1</td><td>3</td><td>-3</td><td><b>7</b></td><td>40</td><td>0%</td><td>4%</td></tr><tr class=''><td>11</td><td class='l'>Briston</td><td>5</td><td>2</td><td>0</td><td>3</td><td>+2</td><td><b>6</b></td><td>36</td><td>0%</td><td>1%</td></tr><tr class=''><td>12</td><td class='l'>North Walsham Town Res</td><td>5</td><td>1</td><td>0</td><td>4</td><td>-17</td><td><b>3</b></td><td>16</td><td>0%</td><td>0%</td></tr><tr class=''><td>13</td><td class='l'>UEA Res</td><td>5</td><td>0</td><td>0</td><td>5</td><td>-20</td><td><b>0</b></td><td>10</td><td>0%</td><td>0%</td></tr><tr class=''><td>14</td><td class='l'>Easton Res</td><td>7</td><td>0</td><td>0</td><td>7</td><td>-23</td><td><b>0</b></td><td>13</td><td>0%</td><td>0%</td></tr></tbody></table></div>
+<p class="muted" style="font-size:12px;margin:10px 0 0">Table worked out from results on Full-Time (points deductions aren't included). Proj / Top / Top 3 come from simulating the rest of the season 5,000 times.</p></section>
+
+<footer>Data from FA Full-Time · 44 league results · updated 31 Oct 2026 18:27.
+Probabilities come from a goals model fitted to every result in the division, weighted towards recent games. It knows nothing about who's available on the day.</footer>
+</div></body></html>
